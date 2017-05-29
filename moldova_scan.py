@@ -8,6 +8,10 @@ for x in ip_list:
         pass
     else:
         print(socket.gethostbyaddr(str(x)))
+        #print(type(socket.gethostbyaddr(str(x))[0]))
+        #print(type(socket.gethostbyaddr(str(x))[2][0]))
         with open('rezultat.txt', 'a') as f:
-            f.write(socket.gethostbyaddr(str(a)))
+            f.write("IP: %s nume server: %s" %(socket.gethostbyaddr(str(x))[2][0],
+                socket.gethostbyaddr(str(x))[0]))
+            f.write('\n')
             f.close()
