@@ -7,4 +7,7 @@ for x in ip_list:
     if 'host-static' in socket.gethostbyaddr(str(x))[0]:
         pass
     else:
-        print socket.gethostbyaddr(str(x))
+        print(socket.gethostbyaddr(str(x)))
+        with open('rezultat.txt', 'a') as f:
+            f.write(socket.gethostbyaddr(str(a)))
+            f.close()
